@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Logs</title>
+    <link
+      rel="icon"
+      href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form>
+      <select
+        aria-label="Select Course"
+        id="course"
+        name="course"
+        data-cy="course_select"
+      >
+        <option value="">Choose Courses</option>
+      </select>
+      <br />
+
+      <label for="uvuId" id="uvuIdLabel" class="hidden">UVU ID</label><br />
+      <!-- DONE: write `10234567` as sample data on the input field below -->
+      <!-- DONE: Ensure the character length never exceeds 8 -->
+      <!-- DONE: Only numbers, no letters or other characters -->
+      <!-- DONE: When character length reaches 8 and it's only digits, fire off ajax request, if 200 or 304, display results, else appropriately guide the user. -->
+      <input
+        type="text"
+        id="uvuId"
+        name="uvuId"
+        data-cy="uvuId_input"
+        class="hidden"
+        maxlength="8"
+        placeholder="10234567"
+      />
+      <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="hidden">
+        Student Logs for 10234567
+      </h3>
+      <ul data-cy="logs">
+        <!-- DONE: The following options are currently static values to show you an example. -->
+        <!-- You must replace them with dynamic data by ajaxing GET https://json-server-ft3qa5--3000.local.webcontainer.io/logs?courseId=<courseID>&uvuId=<uvuID> -->
+      </ul>
+      <label for="newLog">New Log</label><br />
+      <textarea
+        style="height: 75px"
+        aria-label="add log textarea"
+        id="newLog"
+        data-cy="log_textarea"
+      ></textarea
+      ><br />
+      <!-- DONE: Button should be disabled until the logs, if any, are displayed and there's text in the textarea -->
+      <button type="submit" id="addLogBtn" data-cy="add_log_btn" disabled>
+        Add Log
+      </button>
+      <!-- DONE: Button should AJAX PUT the textarea value to json-server which will store it -->
+    </form>
+    <!-- DONE: Load the JS file -->
+    <script src="./script.js"></script>
+  </body>
+  <!-- DONE: add appropriate comments you feel are necessary, if any, for the next coder to understand -->
+</html>
